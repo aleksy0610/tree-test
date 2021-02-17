@@ -1,0 +1,119 @@
+@media (prefers-reduced-motion: no-preference) {
+    .App-logo {
+        animation: App-logo-spin infinite 20s linear;
+    }
+}
+
+body {
+    background-color: #ffffff;
+}
+
+.App-link {
+    color: #61dafb;
+}
+
+.App {
+    background-color: #ecf2ff;
+}
+
+.main-container {
+    min-height: 100vh;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 16px;
+}
+
+.border-rounded {
+    border-radius: 8px;
+}
+
+.small-icon {
+    font-size: 15px!important;
+}
+
+.up-arrow-icon {
+    background-color: #d9ffd6;
+    border-radius: 50%;
+    width: 28px;
+    height: 24px;
+}
+
+.side-part {
+    width: 30%;
+}
+
+.graph-part {
+    width: 70%;
+}
+
+.btn-branch {
+    background-color: #ececec;
+    font-size: 14px;
+    border: none;
+    color: #212121;
+}
+
+.bar-chart-wrapper {
+    overflow-x: auto;
+    height: 500px;
+}
+
+.chart-item {
+    height: 100%;
+}
+
+.flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.decrease-icon-box {
+    background-color: #e3e3e3;
+    border-radius: 50%;
+    width: 42px;
+    height: 42px;
+    font-size: 20px;
+    position: relative;
+}
+
+.decrease-rate {
+    position: absolute;
+    bottom: -30px;
+    left: 5px;
+    font-size: 12px;
+}
+
+.bar-box {
+    height: 90%;
+}
+
+.bar-label {
+    height: 10%;
+    font-weight: bold;
+}
+
+.bar {
+    width: 73px;
+    border-radius: 8px;
+    position: relative;
+}
+.bar-content {
+    transform: rotate(-90deg);
+    -webkit-transform: rotate(-90deg);
+    -moz-transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
+    -o-transform: rotate(-90deg);
+    width: 400px;
+    position: absolute;
+    text-align: center;
+}
+
+@keyframes App-logo-spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
