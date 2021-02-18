@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 const CanvasJS = require('./canvasjs.min');
-const canvas_lib = CanvasJS.Chart ? CanvasJS : window.CanvasJS;
 
 class CanvasJSChart extends Component {
 	static _cjsContainerId = 0
@@ -14,8 +13,9 @@ class CanvasJSChart extends Component {
 	}
 
 	componentDidMount() {
-		this.chart = new canvas_lib.Chart(this.chartContainerId, this.options);
-		this.chart.render();
+		if(!this.props.NODE_ENV){
+			this.forceUpdate();
+		}
 	}
 
 	shouldComponentUpdate(nextProps, nextState) {
@@ -23,12 +23,16 @@ class CanvasJSChart extends Component {
 	}
 
 	componentDidUpdate() {
+		const canvas_lib = window?.CanvasJS || CanvasJS;
+		this.chart = new canvas_lib.Chart(this.chartContainerId, this.options);
 		this.chart.options = this.props.options;
 		this.chart.render();
 	}
 
 	componentWillUnmount() {
-		this.chart.destroy();
+		if (this.chart && this.chart !== undefined) {
+			this.chart.destroy();
+		}
 	}
 
 	render() {
@@ -38,7 +42,7 @@ class CanvasJSChart extends Component {
 
 const CanvasJSReact = {
 	CanvasJSChart: CanvasJSChart,
-	CanvasJS: canvas_lib
+	CanvasJS: CanvasJS
 };
 
 export default CanvasJSReact;
